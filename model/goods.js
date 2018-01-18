@@ -2,17 +2,19 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 var Goods = new Schema({
 	kind : String,
-	num : Number,
+	num : String,
 	goodsName : String,
 	goodsNum : String,
-	price    : Number,
-	putaway :Boolean,
-	boutique : Boolean,
-	newGood : Boolean,
-	hotSell : Boolean,
-	sugg : Number,
-	stock : Number,
-	virtualSales : Number,
+	imgBigPath : String,
+	imgSmPath : String,
+	price : String,
+	putaway :String,
+	boutique : String,
+	newGood : String,
+	hotSell : String,
+	sugg : String,
+	stock : String,
+	virtualSales : String,
 	date : {type:Date,default : Date.now}
 })
 var goodsModel = mongoose.model("good",Goods);

@@ -29,11 +29,11 @@
 			</ul>
 			<div class="content">
 				<form action="">
-					<div class="commonInfo">
+					<div class=" title commonInfo">
 						<div >
 							<p>商品名称：</p>
 							<p>
-								<input type="text" />
+								<input type="text" class="goodsName"/>
 								<input type="color"/>
 								<select name="size-style">
 									<option value="">字体样式</option>
@@ -44,14 +44,14 @@
 						<div>
 							<p><a href="javascript:;" class="help"><img src="/images/admin/notice.gif"/></a>商品货号：</p>
 							<p>
-								<input type="text" />
+								<input type="text" class="goodsNum"/>
 								<br /><span>如果您不输入商品货号，系统将自动生成一个唯一的货号。</span>
 							</p>
 						</div>
 						<div>
 							<p>商品分类：</p>
 							<p>
-								<select name="">
+								<select class="kind" name="">
 									<option value="">好事达</option>
 								</select>
 								<a href="javascript:;" class="addClass">添加分类</a>
@@ -75,7 +75,7 @@
 						<div>
 							<p>本店售价：</p>
 							<p>
-								<input type="text" value="0"/>&nbsp;
+								<input type="text" class="price" />&nbsp;
 								<input type="button" value="按市场价计算"/>
 							</p>
 						</div>
@@ -103,7 +103,7 @@
 						<div>
 							<p>虚拟销量：</p>
 							<p>
-								<input type="text" value="0"/>
+								<input type="text"  class="virtualSales"/>
 							</p>
 						</div>
 						<div>
@@ -143,22 +143,22 @@
 						<div>
 							<p>上传商品图片：</p>
 							<p>
-								<input type="file" /><br />
+								<input type="file" class="imgBigPath"/><br />
 								<input type="text" placeholder="商品图片外部URL"/>
 							</p>
 						</div>
 						<div>
 							<p>上传商品缩略图：</p>
 							<p>
-								<input type="file" /><br />
+								<input type="file" class="imgSmPath"/><br />
 								<input type="text" placeholder="商品缩略图外部URL"/>
 							</p>
 						</div>
 					</div>
-					<div class="detialInfo">
+					<div class="title detialInfo">
 						<textarea  rows="" cols=""></textarea>
 					</div>
-					<div class="otherInfo">
+					<div class="title otherInfo">
 						<div>
 							<p>商品重量：</p>
 							<p>
@@ -175,26 +175,26 @@
 						</div>
 						<div>
 							<p>库存警告数量：</p>
-							<p><input type="text" value="1" /></p>
+							<p><input type="text" value="1" class="stock"/></p>
 						</div>
 						<div>
 							<p>加入推荐：</p>
 							<p>
-								<input type="checkbox"/>&nbsp;精品&nbsp;
-								<input type="checkbox" />&nbsp;新品&nbsp;
-								<input type="checkbox" />&nbsp;热销
+								<input type="checkbox" class="boutique"/>&nbsp;精品&nbsp;
+								<input type="checkbox" class="newGood"/>&nbsp;新品&nbsp;
+								<input type="checkbox" class="hotSell"/>&nbsp;热销
 							</p>
 						</div>
 						<div>
 							<p>上架：</p>
 							<p>
-								<input type="checkbox"/>&nbsp;打勾表示允许销售，否则不允许销售
+								<input type="checkbox" class="putaway"/>&nbsp;打勾表示允许销售，否则不允许销售
 							</p>
 						</div>
 						<div>
 							<p>能否为普通商品销售：</p>
 							<p>
-								<input type="checkbox"/>&nbsp;打勾表示能作为普通商品销售，否则只能作为配件或赠品销售
+								<input type="checkbox" >&nbsp;打勾表示能作为普通商品销售，否则只能作为配件或赠品销售
 							</p>
 						</div>
 						<div>
@@ -223,7 +223,7 @@
 							</p>
 						</div>
 					</div>
-					<div class="goodsAttribute">
+					<div class="title goodsAttribute">
 						<div>
 							<p><a href="javascript:;" class="help"><img src="/images/admin/notice.gif"/></a>商品类型：</p>
 							<p>
@@ -237,15 +237,15 @@
 							</p>
 						</div>
 					</div>
-					<div class="goodsPhoto">
+					<div class="title goodsPhoto">
 						<p><a href="javascript:;" class="plus">[+]</a> 图片描述 <input type="text" />
 							上传文件<input type="file" />
 							<input type="text" value="" />
 						</p>
 					</div>
 					<div class="confirm">
-						<input type="button" class="confirm redBtn" value="确定"/>
-						<input type="button" class="reset redBtn" value="重置"/>
+						<input type="button" class="confirmBtn redBtn" value="确定"/>
+						<input type="button" class="resetBtn redBtn" value="重置"/>
 					</div>
 				</form>
 			</div>

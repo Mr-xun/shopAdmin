@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 //引入mongoose
 var mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost/project");
 //引入session
 var session = require("express-session");
