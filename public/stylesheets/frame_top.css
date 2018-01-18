@@ -1,0 +1,140 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	color: #192E32;
+	font: 12px Microsoft Yahei, "sans-serif", "Arial", "Verdana";
+}
+
+#header_nav {
+	background: #303030;
+	height: 76px;
+}
+
+#header_nav .logo {
+	margin-left: 30px;
+	margin-top: 20px;
+	width: 262px;
+	height: 45px;
+	float: left;
+}
+
+#header_nav .nav_list {
+	text-align: center;
+	width: 1000px;
+	position: absolute;
+	right: 0px;
+	height: 75px;
+}
+
+#header_nav .nav_list ul {
+	margin: 0;
+	list-style: none;
+	float: right;
+}
+
+#header_nav .nav_list ul li {
+	float: left;
+	width: 82px;
+	height: 82px;
+}
+
+#header_nav .nav_list ul li a {
+	text-align: center;
+	height: 67px;
+	width: 82px;
+	padding-top: 8px;
+	display: block;
+	text-decoration: none;
+	color: #FFF;
+}
+#header_nav .nav_list ul li a:hover{
+	background: #454545;
+}
+#header_nav .nav_list ul li a img {
+	margin: auto;
+	display: block;
+	height: 35px;
+}
+
+#header_nav .nav_list ul li a span {
+	margin-top: 6px;
+	display: block;
+}
+
+#header_nav .nav_list ul li:nth-of-type(1) {
+	width: 102px;
+	text-align: center;
+}
+
+#header_nav .nav_list ul li:nth-of-type(1) a {
+	width: 102px;
+	text-align: center;
+}
+
+#header_nav .nav_list ul li:nth-of-type(1) span {
+	color: #ff0;
+	font-weight: bold;
+}
+#bottom_nav {
+	background: #575757;
+	height: 41px;
+	border-bottom: 1px solid #212121;
+}
+
+#bottom_nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0px 0px 0px 15px;
+}
+
+#bottom_nav ul li {
+	float: left;
+	display: block;
+	height: 41px;
+	line-height: 41px;
+	position: relative;
+	text-align: center;
+}
+
+#bottom_nav ul li a {
+	float: LEFT;
+	color: #FFF;
+	padding: 0px 12px;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+}
+#bottom_nav ul li a:hover{
+	background: #444;
+}
+#bottom_nav ul li a img {
+	vertical-align: middle;
+}
+
+#bottom_nav ul li a span {
+	margin-left: 10px;
+}
+
+#bottom_nav ul li a em {
+	margin-left: 10px;
+	font-style: normal;
+	width: 32px;
+	height: 16px;
+	background: url(../images/admin/index-11_22.png) no-repeat scroll;
+	display: inline-block;
+	line-height: 16px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#bottom_nav ul li i {
+	height: 13px;
+	width: 0px;
+	border-right: 1px solid #656565;
+	margin-top: 15px;
+	border-left: 1px solid #303030;
+	display: inline-block;
+}
+
+
+/*# sourceMappingURL=frame_top.css.map */

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/frame_main_addGoods.css"/>
+		<script src="../javascripts/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../javascripts/frame_main_addGoods.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="top_nav">
+			<h1>
+				<span class="manageCenter"><a href="javascript:;">ECSHOP 管理中心</a></span>
+				<span class="goodsList"><a href="javascript:;">-添加新商品</a></span>
+				<span class="help"><a href="javascript:;"><img src="/images/admin/jnsy.png"/></a></span>
+				<span class="addGoods"><a href="frame_main_goodsList.html" target="main">商品列表</a></span>
+			</h1>
+		</div>
+		<div id="wrap">
+			<ul>
+				<li class="common">通用信息</li>
+				<li class="detial">详细描述</li>
+				<li class="other">其他信息</li>
+				<li class="attribute">商品属性</li>
+				<li class="photos">商品相册</li>
+				<li class="contact">关联商品</li>
+				<li class="parts">配件</li>
+				<li class="aritcle">关联文章</li>
+			</ul>
+			<div class="content">
+				<form action="">
+					<div class="commonInfo">
+						<div >
+							<p>商品名称：</p>
+							<p>
+								<input type="text" />
+								<input type="color"/>
+								<select name="size-style">
+									<option value="">字体样式</option>
+								</select>
+							</p>
+							
+						</div>
+						<div>
+							<p><a href="javascript:;" class="help"><img src="/images/admin/notice.gif"/></a>商品货号：</p>
+							<p>
+								<input type="text" />
+								<br /><span>如果您不输入商品货号，系统将自动生成一个唯一的货号。</span>
+							</p>
+						</div>
+						<div>
+							<p>商品分类：</p>
+							<p>
+								<select name="">
+									<option value="">好事达</option>
+								</select>
+								<a href="javascript:;" class="addClass">添加分类</a>
+							</p>
+						</div>
+						<div class="expand">
+							<p>拓展分类：</p>
+							<p>
+								<input type="button" name="add" id="add" class="redBtn" value="添加" />
+							</p>
+						</div>
+						<div>
+							<p>商品品牌：</p>
+							<p>
+								<select name="">
+									<option value="">好事达</option>
+								</select>
+								<a href="javascript:;" class="addBrand">添加品牌</a>
+							</p>
+						</div>
+						<div>
+							<p>本店售价：</p>
+							<p>
+								<input type="text" value="0"/>&nbsp;
+								<input type="button" value="按市场价计算"/>
+							</p>
+						</div>
+						<div class="proPay">
+							<p><a href="javascript:;" class="help"><img src="/images/admin/notice.gif"/></a >会员价格：</p>
+							<p>
+								<i>注册用户</i><input type="text" value="-1"/><i>代销用户</i><input type="text" value="-1"/>
+								<i>vip</i><input type="text" value="-1"/>
+								<br /><span>会员价格为-1时表示会员价格按会员等级折扣率计算。你也可以为每个等级指定一个固定价格</span>
+							</p>
+						</div>
+						<div>
+							<p><a href="javascript:;" class="help"><img src="/images/admin/notice.gif"/></a>商品优惠价格：</p>
+							<p>
+								<i><a href="javascript:;" class="plus">[+]</a>优惠数量</i>&nbsp;<input type="text" />&nbsp;<i>优惠价格</i>
+								<br /><span>购买数量达到优惠数量时享受的优惠价格</span>
+							</p>
+						</div>
+						<div>
+							<p>市场售价：</p>
+							<p>
+								<input type="text" value="0"/>&nbsp;<input type="button" value="取整数" />
+							</p>
+						</div>
+						<div>
+							<p>虚拟销量：</p>
+							<p>
+								<input type="text" value="0"/>
+							</p>
+						</div>
+						<div>
+							<p><a href="javascript:;" class="help"><img src="/images/admin/notice.gif"/></a>赠送消费积分数：</p>
+							<p>
+								<input type="text" value="-1"/>
+								<br /><span>购买该商品时赠送消费积分数，-1表示按商品价格赠送	</span>
+							</p>
+						</div>
+						<div>
+							<p><a href="javascript:;" class="help"><img src="/images/admin/notice.gif"/></a>赠送等级积分数：</p>
+							<p>
+								<input type="text" value="-1"/>
+								<br /><span>购买该商品时赠送等级积分数，-1表示按商品价格赠送	</span>
+							</p>
+						</div>
+						<div>
+							<p><a href="javascript:;" class="help"><img src="/images/admin/notice.gif"/></a>积分购买金额：</p>
+							<p>
+								<input type="text" value="0"/>
+								<br /><span>（此处须填写金额）购买该商品时最多可以使用积分的金额</span>
+							</p>
+						</div>
+						<div>
+							<p><input type="checkbox" />促销价：</p>
+							<p>
+								<input type="text" value="0"/>
+							</p>
+						</div>
+						<div>
+							<p>促销日期：</p>
+							<p>
+								<input type="date" /><input type="button" class="redBtn" value="选择" />-
+								<input type="date" /><input type="button" class="redBtn"  value="选择" />
+							</p>
+						</div>
+						<div>
+							<p>上传商品图片：</p>
+							<p>
+								<input type="file" /><br />
+								<input type="text" placeholder="商品图片外部URL"/>
+							</p>
+						</div>
+						<div>
+							<p>上传商品缩略图：</p>
+							<p>
+								<input type="file" /><br />
+								<input type="text" placeholder="商品缩略图外部URL"/>
+							</p>
+						</div>
+					</div>
+					<div class="detialInfo">
+						<textarea  rows="" cols=""></textarea>
+					</div>
+					<div class="otherInfo">
+						<div>
+							<p>商品重量：</p>
+							<p>
+								<input type="text" />
+								<select name="">
+									<option value="">千克</option>
+									<option value="">克</option>
+								</select>
+							</p>
+						</div>
+						<div>
+							<p><a href="javascript:;" class="help"><img src="/images/admin/notice.gif"/></a></p>
+							<p><input type="text" value="1" /></p>
+						</div>
+						<div>
+							<p>库存警告数量：</p>
+							<p><input type="text" value="1" /></p>
+						</div>
+						<div>
+							<p>加入推荐：</p>
+							<p>
+								<input type="checkbox"/>&nbsp;精品&nbsp;
+								<input type="checkbox" />&nbsp;新品&nbsp;
+								<input type="checkbox" />&nbsp;热销
+							</p>
+						</div>
+						<div>
+							<p>上架：</p>
+							<p>
+								<input type="checkbox"/>&nbsp;打勾表示允许销售，否则不允许销售
+							</p>
+						</div>
+						<div>
+							<p>能否为普通商品销售：</p>
+							<p>
+								<input type="checkbox"/>&nbsp;打勾表示能作为普通商品销售，否则只能作为配件或赠品销售
+							</p>
+						</div>
+						<div>
+							<p>能否为免运费商品：</p>
+							<p>
+								<input type="checkbox"/>&nbsp;打勾表示此商品不会产生运费花销，否则按照正常运费计算
+							</p>
+						</div>
+						<div>
+							<p>商品关键词：</p>
+							<p>
+								<input type="text"/>&nbsp;用空格分隔
+							</p>
+						</div>
+						<div>
+							<p>商品简单描述：</p>
+							<p>
+								<textarea name="" rows="4" cols="30"></textarea>
+							</p>
+						</div>
+						<div>
+							<p><a href="javascript:;" class="help"><img src="/images/admin/notice.gif"/></a></p>
+							<p>
+								<textarea name="" rows="4" cols="30"></textarea>
+								<br /><span>仅供商家自己看的信息</span>
+							</p>
+						</div>
+					</div>
+					<div class="goodsAttribute">
+						<div>
+							<p><a href="javascript:;" class="help"><img src="/images/admin/notice.gif"/></a>商品类型：</p>
+							<p>
+								<select name="">
+									<option value="">请选择商品类型</option>
+									<option value="">书</option>
+									<option value="">音乐</option>
+									<option value="">电影</option>
+								</select>
+								<br /><span>请选择商品的所属类型，进而完善此商品的属性</span>
+							</p>
+						</div>
+					</div>
+					<div class="goodsPhoto">
+						<p><a href="javascript:;" class="plus">[+]</a> 图片描述 <input type="text" />
+							上传文件<input type="file" />
+							<input type="text" value="" />
+						</p>
+					</div>
+					<div class="confirm">
+						<input type="button" class="confirm redBtn" value="确定"/>
+						<input type="button" class="reset redBtn" value="重置"/>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div id="footer">
+			<p>共执行 7 个查询，用时 0.022580 秒，Gzip 已禁用，内存占用 3.533 MB</p>
+			<p>版权所有 © 2005-2018 上海商派软件有限公司，并保留所有权利。</p>
+		</div>
+	</body>
+</html>

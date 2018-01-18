@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/frame_main.css"/>
+		<script src="../javascripts/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../javascripts/frame_main_goodsList.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="top_nav">
+			<h1>
+				<span class="manageCenter"><a href="javascript:;">ECSHOP 管理中心</a></span>
+				<span class="goodsList"><a href="javascript:;">-商品列表</a></span>
+				<span class="help"><a href="javascript:;"><img src="/images//admin/jnsy.png"/></a></span>
+				<span class="addGoods"><a href="frame_main_addGoods.html" target="main">添加新商品</a></span>
+			</h1>
+		</div>
+		<div id="classify">
+			<form >
+				<img src="/images/admin/icon_search.gif"/>
+				<select name="goods">
+					<option value="">所有分类</option>
+				</select>
+				<select name="brand">
+					<option value="">所有品牌</option>
+				</select>
+				<select name="activity">
+					<option value="">全部</option>
+				</select>
+				<select name="new_old">
+					<option value="">全部</option>
+				</select>
+				<span>关键字</span>
+				<input type="text" value=""/>
+				<input class="btn" type="submit" value="搜索" />
+			</form>
+		</div>
+		<div id="goodList">
+				<table border="1" cellspacing="0" cellpadding="0">
+					<tbody class="goodsList_tbody">
+						<tr>
+							<th>
+								<input type="checkbox" class="checkAll"/>
+								<a href="javascript:;">编号</a>
+								<img src="/images/admin/sort_desc.gif"/>
+							</th>
+							<th><a href="javascript:;">商品名称</a></th>
+							<th><a href="javascript:;">货号</a></th>
+							<th><a href="javascript:;">价格</a></th>
+							<th><a href="javascript:;">上架</a></th>
+							<th><a href="javascript:;">精品</a></th>
+							<th><a href="javascript:;">新品</a></th>
+							<th><a href="javascript:;">热销</a></th>
+							<th><a href="javascript:;">推荐排序</a></th>
+							<th><a href="javascript:;">库存</a></th>
+							<th><a href="javascript:;">虚拟销量</a></th>
+							<th>操作</th>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="checkOne" id="checkOne" value="" /><span>001</span></td>
+							<td><span title="点击修改内容" class="goodsname">大学英语</span></td>
+							<td><span title="点击修改内容">ABCD001</span></td>
+							<td><span title="点击修改内容">250</span><i>.00</i></td>
+							<td><img src="/images/admin/yes.gif"/></td>
+							<td><img src="/images/admin/yes.gif"/></td>
+							<td><img src="/images/admin/yes.gif"/></td>
+							<td><img src="/images/admin/yes.gif"/></td>
+							<td><span title="点击修改内容">1000</span></td>
+							<td><span title="点击修改内容">120</span></td>
+							<td><span title="点击修改内容">100</span></td>
+							<td>
+								<a href="javascript:;" class="look" title="查看"><img src="/images/admin/icon_view.gif"/></a>
+								<a href="javascript:;" class="look" title="编辑"><img src="/images/admin/icon_edit.gif"/></a>
+								<a href="javascript:;" class="look" title="复制"><img src="/images/admin/icon_copy.gif"/></a>
+								<a href="javascript:;" class="look" title="回收站"><img src="/images/admin/icon_trash.gif"/></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="pages">
+					<p>总计<span class="recordAll">15</span>个记录分为
+						<span class="pageAll">2</span>页
+						当前第  <span class="currentPage">1</span> 页,每页&nbsp;
+						<input type="text" name="counts" id="counts" class="pageRecord" value="15" /> &nbsp;|&nbsp;
+						<a href="javascript:;" class="firstPage">第一页</a>
+						<a href="javascript:;" class="upPage">上一页</a>
+						<a href="javascript:;" class="downPage">下一页</a>
+						<a href="javascript:;" class="lastPage">最末页</a>
+						<select name="selectPage" class="selectPage">
+							<option value="1" class="on">1</option>
+						</select>
+					</p>
+				</div>
+				<div class="choice">
+					<select name="choice">
+						<option value="">请选择...</option>
+					</select>
+					<input type="submit" name="choice" id="choice" value="确定" />
+				</div>
+		</div>
+		<div id="footer">
+			<p>共执行 7 个查询，用时 0.022580 秒，Gzip 已禁用，内存占用 3.533 MB</p>
+			<p>版权所有 © 2005-2018 上海商派软件有限公司，并保留所有权利。</p>
+		</div>
+	</body>
+</html>

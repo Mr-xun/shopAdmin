@@ -1,0 +1,40 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0; }
+
+#content {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background: url(/images/err/body_bj.jpg); }
+  #content h2 {
+    height: 40px;
+    font-weight: normal;
+    border-bottom: 1px solid #8A8A8A; }
+  #content .wrap {
+    width: 100%;
+    height: 200px;
+    background: #fff;
+    padding: 20px 40px; }
+    #content .wrap h3 {
+      height: 28px;
+      line-height: 28px; }
+      #content .wrap h3 span {
+        display: inline-block;
+        margin-right: 50px;
+        vertical-align: middle; }
+    #content .wrap .check {
+      padding-left: 80px;
+      font-size: 14px; }
+      #content .wrap .check p {
+        margin: 40px 0; }
+      #content .wrap .check em {
+        font-style: normal; }
+      #content .wrap .check a {
+        font-size: 14px;
+        text-decoration: none;
+        color: #000000; }
+
+/*# sourceMappingURL=err.css.map */

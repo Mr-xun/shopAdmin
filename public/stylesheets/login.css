@@ -1,0 +1,172 @@
+html, body {
+  height: 100%;
+  background: url(../images/login/ecshop-bg.png);
+  padding: 0;
+  margin: 0; }
+
+#content {
+  width: 100%;
+  height: 100%;
+  background: url(../images/login/ecshop-bg.png) no-repeat center center;
+  background-size: cover;
+  position: relative; }
+  #content .top .logo {
+    height: 44px;
+    padding: 40px 0 0 50px; }
+  #content .top .logo_name {
+    width: 380px;
+    height: 65px;
+    margin: 0 auto; }
+    #content .top .logo_name img {
+      width: 100%;
+      height: 100%; }
+  #content .form {
+    width: 475px;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 42px;
+    height: 350px;
+    background: url(../images/login/icloud-bar.png) no-repeat 0 bottom;
+    padding-top: 50px;
+    margin: 0 auto; }
+    #content .form .form_login {
+      position: absolute;
+      left: 16px;
+      z-index: 2;
+      width: 302px;
+      height: 321px;
+      background: rgba(255, 255, 255, 0.85);
+      border: none;
+      color: #A1A1A1;
+      padding: 5px 70px 25px;
+      overflow: hidden;
+      box-shadow: 5px 2px 20px rgba(0, 0, 0, 0.3);
+      height: 322px; }
+      #content .form .form_login h3 {
+        padding-bottom: 10px;
+        line-height: 1;
+        font-size: 18px;
+        margin: 18px 0; }
+      #content .form .form_login div {
+        position: relative;
+        height: 51px;
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        border-bottom: 1px solid #ddd; }
+      #content .form .form_login .user {
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+        border-top: 1px solid #ddd; }
+        #content .form .form_login .user span {
+          display: block;
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          left: 15px;
+          top: 15px;
+          z-index: 10; }
+        #content .form .form_login .user input {
+          border: none;
+          background-color: #fff;
+          color: #8a8a8a;
+          width: 100%;
+          height: 48px;
+          line-height: 48px;
+          text-indent: 50px;
+          box-shadow: inset 30px 30px 0 30px #fff; }
+      #content .form .form_login .password span {
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        left: 15px;
+        top: 15px;
+        z-index: 10; }
+      #content .form .form_login .password input {
+        border: none;
+        background-color: #fff;
+        color: #8a8a8a;
+        width: 298px;
+        height: 48px;
+        line-height: 48px;
+        text-indent: 50px;
+        box-shadow: inset 30px 30px 0 30px #fff; }
+      #content .form .form_login .security span {
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        left: 15px;
+        top: 15px;
+        z-index: 10; }
+      #content .form .form_login .security input {
+        border: none;
+        background-color: #fff;
+        color: #8a8a8a;
+        width: 100%;
+        height: 48px;
+        line-height: 48px;
+        text-indent: 50px;
+        box-shadow: inset 30px 30px 0 30px #fff; }
+      #content .form .form_login .security .randIn {
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        text-align: center;
+        line-height: 36px;
+        font-size: 20px;
+        cursor: pointer;
+        color: #000;
+        width: 104px;
+        height: 36px;
+        background: yellow; }
+      #content .form .form_login .btton {
+        border: none;
+        position: relative;
+        height: 51px; }
+        #content .form .form_login .btton button {
+          cursor: pointer;
+          width: 100%;
+          margin-top: 20px;
+          display: block;
+          color: #FFF;
+          font-size: 16px;
+          line-height: 51px;
+          text-align: center;
+          background-color: #fc7878;
+          border: 0;
+          border-radius: 4px;
+          letter-spacing: 4px; }
+      #content .form .form_login .remember {
+        border: none;
+        margin-top: 12px;
+        overflow: hidden;
+        height: auto; }
+        #content .form .form_login .remember input {
+          float: left;
+          width: 15px;
+          height: 15px;
+          margin: 2px 8px 0 0; }
+        #content .form .form_login .remember label {
+          color: #666;
+          font-size: 12px;
+          float: left; }
+        #content .form .form_login .remember a:nth-of-type(1) {
+          float: left;
+          margin-left: 25px;
+          font-size: 12px;
+          color: #41A5E1 !important;
+          display: inline-block;
+          text-align: right;
+          text-decoration: none; }
+        #content .form .form_login .remember a:nth-of-type(2) {
+          float: right;
+          font-size: 12px;
+          color: #41A5E1 !important;
+          display: inline-block;
+          text-align: right;
+          text-decoration: none; }
+        #content .form .form_login .remember a:hover {
+          text-decoration: underline; }
+
+/*# sourceMappingURL=login.css.map */

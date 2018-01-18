@@ -1,0 +1,22 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+#frame_drag {
+  width: 10px;
+  height: 100%;
+  background: #303030; }
+  #frame_drag .drag {
+    height: 100%;
+    width: 10px; }
+    #frame_drag .drag a {
+      display: block;
+      height: 100%;
+      position: relative; }
+      #frame_drag .drag a img {
+        position: absolute;
+        top: 50%;
+        vertical-align: middle; }
+
+/*# sourceMappingURL=frame_drag.css.map */

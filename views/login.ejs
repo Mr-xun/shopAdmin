@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/login.css"/>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/iconfont.css"/>
+		<script src="/javascripts/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="content">
+			<div class="top">
+				<div class="logo">
+					<img src="/images/login/shopex.png"/>
+				</div>
+				<div class="logo_name">
+					<img src="/images/login/ecshop-logo.png"/>
+				</div>
+			</div>
+			<div class="form">
+				<form id="login" class="form_login">
+					<h3></h3>
+					<div class="user">
+						<span class="iconfont">&#xe623;</span>
+						<input type="text" name="username" id="username" placeholder="用户名" />
+					</div>
+					<div class="password">
+						<span class="iconfont">&#xe65b;</span>
+						<input type="password" name="pwd" id="pwd" placeholder="密码" />
+					</div>
+					<div class="security">
+						<span class="iconfont">&#xe656;</span>
+						<input type="text" name="security" id="security" placeholder="验证码" />
+						<em class="randIn"></em>
+					</div>
+					<div class="btton">
+						<button class="btn" onclick="login()">登录</button>
+					</div>
+					<div class="remember">
+						<input type="checkbox" name="check" id="check" />
+						<label for="check">保存登录信息</label>
+						<a href="javascript:;">忘记密码</a>
+						<a href="javascript:;">去店铺首页>></a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var randIn = $(".randIn");
+		randIn.html(randCode());
+		randIn.click(function(){
+			randIn.html(randCode());
+		})
+		function login(){
+			var username = $("#username");
+			var pwd = $("#pwd");
+			var code = $("#security");
+			if(username.val() == "" && code.val() == ""){
+				alert("-管理员用户不能为空！"  +  "\n-您没有输入验证码！")
+			}else if(username.val() == ""){
+				alert("-管理员用户不能为空！")
+			}else if(code.val() == ""){
+				alert("-您没有输入验证码！")
+			}else{
+				$.ajax({
+					url : "/api/login4ajax",
+					type : "POST",
+					data : {
+						username : $("#username").val(),
+						pwd :$("#pwd").val(),
+						security : $("#security").val(),
+						code : $(".randIn").html()
+					},
+					success : function(res){
+						if(res.code == 1){
+							console.log(res)
+							location.href = "index"
+							alert("正确")
+						}else if(res.code == -1){
+							console.log(res)
+							alert()
+							location.href = "errOne"
+						}else{
+							console.log(res)
+							alert()
+							location.href = "errTwo"
+						}
+					}
+				})
+			};
+		}
+		function randCode(){
+			var str = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+			var code = ""
+			for(var i = 1; i <= 4; i++ ){
+				var random = Math.floor(Math.random()*36);
+				code += str.charAt(random);
+			}
+			return code;
+		}
+	</script>
+</html>

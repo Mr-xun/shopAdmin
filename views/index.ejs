@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/index.css"/>
+		<script src="/javascripts/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<frameset rows="118,*" border="0" framespacing="0">
+		<frame id="top" src="/html/frame_top.html">
+		<frameset id="content" cols="180,10,*" border="0" framespacing="0">
+			<frame id="left_nav" src="/html/frame_left.html"/></frame>
+			<frame id="drag" src="/html/frame_drag.html"/></frame>
+			<frame id="main" name="main" src="/html/test.html"/>
+			<script type="text/javascript">
+			console.log("faxong")
+				$.ajax({
+					url : "index/goodsList_ajax",
+					type: "POST",
+					data:{
+						num : 001
+					},
+					success:function(res){
+						console.log(res)
+					}
+				})
+		</script>
+			</frame>
+		</frameset>
+	</frameset>
+	<body>
+		
+	</body>
+</html>

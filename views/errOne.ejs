@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title></title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/err.css"/>
+		<script src="/javascripts/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="content">
+			<h2>ECSHOP管理中心 - 系统信息</h2>
+			<div class="wrap">
+				<h3><span><img src="/images/err/warning.gif"/></span>您输入的 验证码不正确。</h3>
+				<div class="check">
+					<p>如果您不做出选择，将在 <em class="times">3</em> 秒后跳转到第一个链接地址</p>
+					<a href="javascript:;">返回上一页</a>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+	$(function(){
+		var back = $(".check a");
+		var num = 3;
+		var times = $(".times");
+		back.click(function(){
+			location.href = "login"
+		})
+		
+		var time = setInterval(function(){
+			num --;
+			times.html(num);
+			if(num == 0){
+				clearInterval(time);
+				location.href="login"
+			}
+		},1000)
+	})
+	</script>
+</html>
