@@ -17,27 +17,15 @@ $(function(){
 		$box.eq(index).css("display","block");
 		$box.eq(index).siblings("div:lt(4)").css("display","none");
 	})
-//	var goodsNum = $(".goodsNum").val();
-//	var kind = $(".kind option:selected").val()
-//	var price = $(".price").val();
-//	var virtualSales = parseInt($(".virtualSales").val());
-//	var imgBigPath =  $(".imgBigPath");
-//	var imgSmPath = $(".imgSmPath");
-//	var stock = $(".stock").val();
-//	var boutique = $(".boutique");
-//	var newGood = $(".newGood");
-//	var hotSell = $(".hotSell");
-//	var putaway = $(".putaway");
-	
 	confirmBtn.click(function(){
-		num ++;
 		var putaway = $(".putaway").is(":checked") ? true : false;
 		var boutique = $(".boutique").is(":checked") ? true : false;
 		var newGood = $(".newGood").is(":checked") ? true : false;
 		var hotSell = $(".hotSell").is(":checked") ? true : false;
+		var flag = "on";
 		console.log(putaway,boutique,newGood,hotSell)
 		var goodsName = $(".goodsName").val()|| "课本";
-		var goodsNum = $(".goodsNum").val() || 1001;
+		var goodsNum = $(".goodsNum").val();
 		var kind = $(".kind option:selected").val() || "教学"
 		var price = $(".price").val() || 1001;
 		var sugg = $(".sugg").val() || 100;
@@ -47,7 +35,6 @@ $(function(){
 		var imgSmPath = document.getElementsByClassName("imgSmPath")[0].files[0];
 		var form = new FormData;
 		form.append("kind",kind);
-		form.append("num",num);
 		form.append("goodsName",goodsName);
 		form.append("goodsNum",goodsNum);
 		form.append("price",price);
@@ -60,6 +47,7 @@ $(function(){
 		form.append("boutique",boutique);
 		form.append("newGood",newGood);
 		form.append("hotSell",hotSell);
+		form.append("flag",flag);
 //		form.append("imgBigPath",document.getElementsByClassName("imgBigPath")[0].files[0]);
 //		form.append("imgSmPath",document.getElementsByClassName("imgSmPath")[0].files[0]);
 //		form.append("stock",document.getElementsByClassName("stock")[0].value);
@@ -85,7 +73,6 @@ $(function(){
 			if (xhr.readyState==4 && xhr.status==200) {
 				console.log(xhr.responseText);
 				var res = JSON.parse(xhr.responseText);
-				alert(res);
 			}
 		}
 		xhr.send(form);

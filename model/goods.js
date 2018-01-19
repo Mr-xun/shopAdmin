@@ -14,6 +14,7 @@ var Goods = new Schema({
 	hotSell : String,
 	sugg : String,
 	stock : String,
+	flag : String,
 	virtualSales : String,
 	date : {type:Date,default : Date.now}
 })

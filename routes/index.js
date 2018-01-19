@@ -44,17 +44,25 @@ router.post("/api/login4ajax",function(req,res){
 		})
 	}
 })
-//主页
+//分页
 router.post("/html/index/goodsList_ajax",function(req,res){
 	var keyWord =req.body.keyWord;
 	var pageNow = Number(req.body.pageNow);
 	var pageRecord = Number(req.body.pageRecord);
-//	var operate = goodsModel.find({$or:[{kind:{$regex:keyWord},goodsName:{$regex:keyWord}}]});
-	var operate = goodsModel.find({"goodsName":{$regex:keyWord}});
+	var clearGoodNO = req.body.clearGoodNO;
+	console.log(clearGoodNO)
+	goodsModel.update({"num":clearGoodNO},{$set:{flag:"off"}},function(err){
+		if(err){
+			console.log(err)
+		}else{
+//			console.log("修改");
+		}
+	})
+	var operate = goodsModel.find({"goodsName":{$regex:keyWord},"flag":"on"});
 	operate.skip((pageNow - 1)*pageRecord);
 	operate.limit(pageRecord);
 		operate.exec(function(err,docs){
-			goodsModel.count({"goodsName":{$regex:keyWord}},function(err,count){
+			goodsModel.count({"goodsName":{$regex:keyWord},"flag":"on"},function(err,count){
 				console.log(count)
 				res.json({res:docs,count});
 			})
@@ -69,15 +77,27 @@ router.post("/html/index/addGoods_ajax",function(req,res){
 		code : 1,
 		message : "成功"
 	}
-	form.parse(req, function(err, body, files){
+	//商品编号自增
+	goodsModel.count({},function(err,count){
+		form.parse(req, function(err, body, files){
 		if(err) {
 			console.log(err);
 		}
-		console.log(body);
 		var kind = body.kind;
-		var num = body.num;
+		var  num = count;
+		if(count < 10){
+			num = "00" + count;
+		}else if(count >=10 && count < 100){
+			num = "0" + count
+		}else{
+			num = count;
+		}
 		var goodsName = body.goodsName;
-		var goodsNum = body.goodsNum;
+		var goodsNum = body.goodsNum ;
+		console.log(Boolean(goodsNum))
+		if(body.goodsNum == ""){
+			goodsNum = "XIAO" + num
+		}
 		var price = body.price[0];
 		var putaway = body.putaway;
 		var boutique = body.boutique;
@@ -88,7 +108,7 @@ router.post("/html/index/addGoods_ajax",function(req,res){
 		var virtualSales = body.virtualSales[0];
 		var imgBigPath = files["imgBigPath"][0].path.replace("public\\", "");
 		var imgSmPath = files["imgSmPath"][0].path.replace("public\\", "");
-		console.log(imgBigPath);
+		var flag = body.flag;
 		var gm = new goodsModel();
 		gm.kind = kind;
 		gm.num = num;
@@ -104,6 +124,7 @@ router.post("/html/index/addGoods_ajax",function(req,res){
 		gm.boutique = boutique;
 		gm.newGood = newGood;
 		gm.hotSell = hotSell;
+		gm.flag = flag;
 		gm.save(function(err){
 			if(err) {
 				console.log(err)
@@ -112,6 +133,8 @@ router.post("/html/index/addGoods_ajax",function(req,res){
 			}
 			res.json(result);
 		})
-	})	
+	})
+	})
+		
 })
 module.exports = router;
