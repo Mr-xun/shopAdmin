@@ -54,6 +54,8 @@ $(function(){
 			if (xhr.readyState==4 && xhr.status==200) {
 				console.log(xhr.responseText);
 				var res = JSON.parse(xhr.responseText);
+                                alert("增加成功")
+
 			}
 		}
 		xhr.send(form);
