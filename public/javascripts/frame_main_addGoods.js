@@ -48,25 +48,6 @@ $(function(){
 		form.append("newGood",newGood);
 		form.append("hotSell",hotSell);
 		form.append("flag",flag);
-//		form.append("imgBigPath",document.getElementsByClassName("imgBigPath")[0].files[0]);
-//		form.append("imgSmPath",document.getElementsByClassName("imgSmPath")[0].files[0]);
-//		form.append("stock",document.getElementsByClassName("stock")[0].value);
-//		form.append("goodsNum",goodsNum);
-//		form.append("kind",kind);
-//		form.append("price",price);
-//		form.append("virtualSales",virtualSales);
-//		form.append("imgBigPath",imgBigPath);
-//		form.append("imgSmPath",imgSmPath);
-//		form.append("stock",stock);
-//		$.ajax({
-//			type:"post",
-//			url:"/index/addGoods_ajax",
-//			async:true,
-//			data : form,
-//			success:function(res){
-//				console.log(res)
-//			}
-//		});
 		var xhr = new XMLHttpRequest();
 		xhr.open("POST", "index/addGoods_ajax");
 		xhr.onreadystatechange = function(res){

@@ -15,24 +15,13 @@ $(function(){
 	var clearGoodNO = null;
 	send()
 	//修改内容
-//	var changeName = $(".changeName");
-//	var changeNum = $(".changeNum");
-//	var changePrice = $(".changePrice");
-//	var changeSort = $(".changeSort");
-//	var changeName = $(".changeName");
-//	var changeStock = $(".changeStock");
+//	var changeName = $(".changename");
+//	var changeNum = $(".changenum");
+//	var changePrice = $(".changeprice");
+//	var changeSort = $(".changesort");
+//	var changeStock = $(".changestock");
 //	var changeSpan = $(".goodsList_tbody tr td span");
-//	$(".goodsList_tbody tr td span").click(function(){
-//		$(this).css("display","none");
-//		$(this).siblings("input").css("display","block")
-//		$(this).siblings("i").css("display","none");
-//		$(this).parent().siblings().children("span").css("display","block")
-//		$(this).parent().siblings().children("i").css("display","block")
-//		$(this).parent().siblings().children("input").css("display","none");
-//		var changeHtml = $(this).siblings("input").val();
-//		console.log(changeHtml)
-//		$(this).html(""+changeHtml);
-//	})
+	
 	
 	//模糊查询
 	search.click(function(){
@@ -56,13 +45,7 @@ $(function(){
 	})
 	//回收站
 	console.log($(".trash"))
-	$(".trash").click(function(){
-		clearGoodNO = $(this).parent().siblings().eq(0).children("span").html();
-//		$(this).parent().parent().remove();
-		send()
-		location.reload();
-		console.log($(".trash"))
-	})
+	
 	//封装ajax事件
 	function send(){
 		$.ajax({
@@ -83,16 +66,16 @@ $(function(){
 				var _tr = "";
 				_tr += `<tr>
 							<td><input type="checkbox" name="checkOne" id="checkOne" value="" /><span>${data[key].num}</span></td>
-							<td><span title="点击修改内容" class="goodsname">${data[key].goodsName}</span></td>
-							<td><span title="点击修改内容">${data[key].goodsNum}</span></td>
-							<td><span title="点击修改内容">${data[key].price}</span><i>.00</i></td>
+							<td><span title="点击修改内容" class="changename">${data[key].goodsName}</span><input type="text" class="changeName" /></td>
+							<td><span title="点击修改内容" class="changenum">${data[key].goodsNum}</span><input type="text"   class="changeNum"/></td>
+							<td><span title="点击修改内容" class="changeprice">${data[key].price}</span><input type="text"  class="changePrice"/><i>.00</i></td>
 							<td class="putaway"><img src="/images/admin/yes.gif"/></td>
 							<td class="boutique"><img src="/images/admin/yes.gif"/></td>
 							<td class="newGood"><img src="/images/admin/yes.gif"/></td>
 							<td class="hotSell"><img src="/images/admin/yes.gif"/></td>
-							<td><span title="点击修改内容">${data[key].sugg}</span></td>
-							<td><span title="点击修改内容">${data[key].stock}</span></td>
-							<td><span title="点击修改内容">${data[key].virtualSales}</span></td>
+							<td><span title="点击修改内容" class="changesort">${data[key].sugg}</span><input type="text" class="changeSort" /></td>
+							<td><span title="点击修改内容" class="changestock">${data[key].stock}</span><input type="text" class="changeStock" /></td>
+							<td><span title="点击修改内容" class="changesales">${data[key].virtualSales}</span><input type="text" class="changeSales" /></td>
 							<td>
 								<a href="javascript:;" class="view" title="查看"><img src="/images/admin/icon_view.gif"/></a>
 								<a href="javascript:;" class="edit" title="编辑"><img src="/images/admin/icon_edit.gif"/></a>
@@ -132,7 +115,76 @@ $(function(){
 				currentPage.html(currentOption)
 				pageAll.html(pages);
 				recordAll.html(res.count);
+				$(".goodsList_tbody tr td span").click(function(){
+		$(this).css("display","none");
+		$(this).siblings("input").css("display","inline-block")
+		$(this).siblings("i").css("display","none");
+		$(this).parent().siblings().children("span").css("display","inline-block")
+		$(this).parent().siblings().children("i").css("display","inline-block")
+		$(this).parent().siblings().children("input:gt(0)").css("display","none");
+//		$(this).html(""+changeHtml);
+	})
+	$(".goodsList_tbody tr td span").hover(function(){
+		console.log($(this))
+		$(this).css({"background":"red","color":"#000"})
+	},
+	function(){
+		$(this).css({"background":"#fff","color":"#000"})
+	}
+	)
+	for(var i = 0 ; i < $(".goodsList_tbody tr td span").length;i ++){
+			$(".goodsList_tbody tr td input:gt(0)").eq(i).val(""+$(".goodsList_tbody tr td span").eq(i+1).html())
+		}
+	$(".goodsList_tbody tr td input").blur(function(){
+		var change = $(this).val();
+		var index = $(this).parent().parent().index();
+		$(this).siblings("span").html(""+change);
+		var changeName = $("tr").eq(index).children().children(".changeName").val();
+		var changeNum = $("tr").eq(index).children().children(".changeNum").val();
+		var changePrice = $("tr").eq(index).children().children(".changePrice").val();
+		var changeSort = $("tr").eq(index).children().children(".changeSort").val();
+		var changeStock = $("tr").eq(index).children().children(".changeStock").val();
+		var changeSales = $("tr").eq(index).children().children(".changeSales").val();
+		var num = $(this).parent().siblings().eq(0).children("span").html();
+		console.log(changeName,changeNum,changePrice,changeSort,changeStock,changeSales,num)
+		$(this).css("display","none");
+		$(this).siblings("span").css("display","inline-block")
+		$(this).siblings("i").css("display","inline-block");
+		$.ajax({
+			url : "/index/goodsList_update",
+			type: "POST",
+			data:{
+				num :  num,
+				changeName : changeName,
+				changeNum : changeNum,
+				changePrice : changePrice,
+				changeSort : changeSort,
+				changeStock : changeStock,
+				changeSales : changeSales
+			},
+			success : function(res){
+				console.log("修改")
 			}
+		})
+	})
+	$(".trash").click(function(){
+		clearGoodNO = $(this).parent().siblings().eq(0).children("span").html();
+		$(this).parent().parent().remove();
+		console.log(clearGoodNO)
+		$.ajax({
+			type:"post",
+			url:"index/goodsList_remove",
+			data:{
+				clearGoodNO : clearGoodNO
+			},
+			succcess : function(res){
+				console.log(res.message);
+			}
+		});
+		console.log($(".trash"))
+		})
+			}
+		
 		})
 	}
 	setTimeout(function(){
@@ -181,6 +233,5 @@ $(function(){
 		selectPage.children("option").eq(page).addClass("on").siblings().removeClass().attr("selected",false);
 		currentOption = $(".selectPage .on").html()	
 		send()
-		location.reload();
 	}
 })

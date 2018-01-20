@@ -49,15 +49,6 @@ router.post("/html/index/goodsList_ajax",function(req,res){
 	var keyWord =req.body.keyWord;
 	var pageNow = Number(req.body.pageNow);
 	var pageRecord = Number(req.body.pageRecord);
-	var clearGoodNO = req.body.clearGoodNO;
-	console.log(clearGoodNO)
-	goodsModel.update({"num":clearGoodNO},{$set:{flag:"off"}},function(err){
-		if(err){
-			console.log(err)
-		}else{
-//			console.log("修改");
-		}
-	})
 	var operate = goodsModel.find({"goodsName":{$regex:keyWord},"flag":"on"});
 	operate.skip((pageNow - 1)*pageRecord);
 	operate.limit(pageRecord);
@@ -68,6 +59,44 @@ router.post("/html/index/goodsList_ajax",function(req,res){
 			})
 		})
 })
+//修改商品
+router.post("/index/goodsList_update",function(req,res){
+	var num = req.body.num;
+	var updateName = req.body.changeName;
+	var updateNum = req.body.changeNum;
+	var updatePrice = req.body.changePrice;
+	var updateSugg = req.body.changeSort;
+	var updateStock = req.body.changeStock;
+	var updateSale = req.body.changeSales;
+	goodsModel.update({"num":num},{$set:{goodsName:updateName,goodsNum:updateNum,price:updatePrice,sugg:updateSugg,stock:updateStock,virtualSales:updateSale}},function(err){
+		var result = {
+			code : 1,
+		message : "成功"
+		}
+		if(err){
+			console.log(err);
+		}else{
+			console.log("成功")
+			res.json(result);
+		}
+	})
+})
+
+//删除商品
+router.post("/html/index/goodsList_remove",function(req,res){
+	var clearGoodNO = req.body.clearGoodNO;
+	goodsModel.update({"num":clearGoodNO},{$set:{flag:"off"}},function(err){
+			var result = {
+			code : 3,
+		message : "删除成功"
+		}
+		if(!err){
+			console.log("删除成功")
+			res.json(result)
+		}
+	})
+})
+
 //增加商品信息
 router.post("/html/index/addGoods_ajax",function(req,res){
 	var form = new multiparty.Form({
