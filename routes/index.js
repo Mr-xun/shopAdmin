@@ -44,7 +44,7 @@ router.post("/api/login4ajax",function(req,res){
 		})
 	}
 })
-//分页
+//分页和查询
 router.post("/html/index/goodsList_ajax",function(req,res){
 	var keyWord =req.body.keyWord;
 	var pageNow = Number(req.body.pageNow);
@@ -70,8 +70,8 @@ router.post("/index/goodsList_update",function(req,res){
 	var updateSale = req.body.changeSales;
 	goodsModel.update({"num":num},{$set:{goodsName:updateName,goodsNum:updateNum,price:updatePrice,sugg:updateSugg,stock:updateStock,virtualSales:updateSale}},function(err){
 		var result = {
-			code : 1,
-		message : "成功"
+			code : 2,
+			message : "修改成功"
 		}
 		if(err){
 			console.log(err);
@@ -104,7 +104,7 @@ router.post("/html/index/addGoods_ajax",function(req,res){
 	});
 	var result = {
 		code : 1,
-		message : "成功"
+		message : "增加成功"
 	}
 	//商品编号自增
 	goodsModel.count({},function(err,count){
